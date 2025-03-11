@@ -1,0 +1,12 @@
+<h1 class="text-3xl">Каталог</h1>
+
+<% @products.each do |product| %>
+  <div class="flex space-x-4 border-b-1 py-2">
+    <div class="w-14 flex-none">
+      <%= image_tag 'default_image.jpg', alt: 'Default Image' %>
+    </div>
+    <div class="w-64 flex-1"><%= product.name %></div>
+    <div class="w-32 flex-1"><%= product.count %></div>
+    <div class="w-32 flex-1"><%= product.price %></div>
+  </div>
+<% end %>

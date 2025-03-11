@@ -1,0 +1,10 @@
+<header class="border-b border-gray-300 p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <%= link_to root_path do %>
+      <h1 class="text-xl font-bold">frogogo</h1>
+    <% end %>
+    <nav class="hidden md:flex space-x-4">
+      <%= button_to "Выход", session_path, class: "border border-gray-300 px-3 py-1 rounded hover:cursor-pointer hover:bg-gray-200", method: :delete if authenticated? %>
+    </nav>
+  </div>
+</header>
