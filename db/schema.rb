@@ -21,6 +21,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_11_165429) do
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
+  create_table "data_migrations", primary_key: "version", id: :string, force: :cascade do |t|
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name", null: false
     t.integer "count", default: 0, null: false
