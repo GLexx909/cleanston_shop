@@ -8,7 +8,28 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-User.create(
-  email_address: 'user@example.com',
-  password: 'password',
-)
+def create_user
+  return if User.any?
+
+  User.create(
+    email_address: 'user@example.com',
+    password: 'password',
+  )
+
+  p "Created #{User.count} users"
+end
+
+def create_products
+  return if Product.any?
+
+  Product.insert_all([
+    { name: 'Беспроводная колонка Goodyear Bluetooth Speaker', count: 3, price: 1_600 },
+    { name: 'Женский домашний костюм Sweet Dreams', count: 2, price: 800 },
+    { name: 'Плащ-дождевик SwissOak', count: 2, price: 400 }
+  ])
+
+  p "Created #{Product.count} products"
+end
+
+create_user
+create_products
