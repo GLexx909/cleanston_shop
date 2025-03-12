@@ -40,9 +40,13 @@ class CartItemsController < ApplicationController
     target_sum = dom_id(cart_item, :sum)
     component_sum = CartItemSumComponent.new(cart_item:)
 
+    target_full_sum = dom_id(cart, :full_sum)
+    component_full_sum = CartFullSumComponent.new(cart:)
+
     render turbo_stream: [
       turbo_stream.replace(target_quantity_buttons, render_to_string(component_quantity_buttons)),
-      turbo_stream.replace(target_sum, render_to_string(component_sum))
+      turbo_stream.replace(target_sum, render_to_string(component_sum)),
+      turbo_stream.replace(target_full_sum, render_to_string(component_full_sum))
     ]
   end
 end
