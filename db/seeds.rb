@@ -23,9 +23,9 @@ def create_products
   return if Product.any?
 
   Product.insert_all([
-    { name: 'Беспроводная колонка Goodyear Bluetooth Speaker', count: 3, price: 1_600 },
-    { name: 'Женский домашний костюм Sweet Dreams', count: 2, price: 800 },
-    { name: 'Плащ-дождевик SwissOak', count: 2, price: 400 }
+    { name: 'Беспроводная колонка Goodyear Bluetooth Speaker', quantity: 3, price: 1_600 },
+    { name: 'Женский домашний костюм Sweet Dreams', quantity: 2, price: 800 },
+    { name: 'Плащ-дождевик SwissOak', quantity: 2, price: 400 }
   ])
 
   p "Created #{Product.count} products"
