@@ -21,7 +21,8 @@ gem "jbuilder"
 
 # Migrate and update data alongside your database structure.
 gem 'data_migrate'
-
+# A framework for building reusable, testable & encapsulated view components in Ruby on Rails.
+gem "view_component"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
 
