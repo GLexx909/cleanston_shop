@@ -8,8 +8,5 @@
   </div>
 
   <%= render CartItemQuantityButtonsComponent.new(cart_item: @cart_item) %>
-
-  <div class="w-full md:w-20 flex-1 text-right text-lg font-semibold text-gray-700 md:text-left">
-    <%= @cart_item.product.price %> ₽
-  </div>
+  <%= render CartItemSumComponent.new(cart_item: @cart_item) %>
 </div>

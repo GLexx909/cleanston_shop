@@ -34,9 +34,15 @@ class CartItemsController < ApplicationController
     cart_item = CartItem.find_by(id: params[:id], cart_id: cart.id)
     cart_item = CartItems::UpdateQuantity.new(cart_item, params[:action_type]).call
 
-    target = dom_id(cart_item, :quantity_buttons)
-    component = CartItemQuantityButtonsComponent.new(cart_item:)
+    target_quantity_buttons = dom_id(cart_item, :quantity_buttons)
+    component_quantity_buttons = CartItemQuantityButtonsComponent.new(cart_item:)
 
-    render turbo_stream: turbo_stream.replace(target, render_to_string(component))
+    target_sum = dom_id(cart_item, :sum)
+    component_sum = CartItemSumComponent.new(cart_item:)
+
+    render turbo_stream: [
+      turbo_stream.replace(target_quantity_buttons, render_to_string(component_quantity_buttons)),
+      turbo_stream.replace(target_sum, render_to_string(component_sum))
+    ]
   end
 end
