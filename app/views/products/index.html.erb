@@ -2,12 +2,7 @@
   <h1 class="text-2xl font-bold mb-4">Каталог товаров</h1>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
     <% @products.each do |product| %>
-      <div class="shadow-lg p-4">
-        <%= image_tag 'default_image.jpg', alt: 'Default Image', class: 'w-full h-48 object-cover rounded'%>
-        <h2 class="text-lg font-semibold mt-2"><%= product.name %></h2>
-        <p class="text-gray-700">Цена: <%= number_to_currency(product.price, unit: '₽') %></p>
-        <button class="mt-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 cursor-pointer">В корзину</button>
-      </div>
+      <%= render 'product_card', product: %>
     <% end %>
   </div>
 </div>
