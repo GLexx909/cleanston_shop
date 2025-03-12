@@ -1,0 +1,5 @@
+<%= turbo_frame_tag dom_id(@cart_item, :sum) do %>
+  <div class="<%= sum_classes %>">
+    <%= sum_element %>
+  </div>
+<% end %>
