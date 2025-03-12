@@ -13,4 +13,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   resources :cart_items, only: %i[create destroy]
+  get "carts/:id", to: "carts#show", as: "cart"
 end
+
