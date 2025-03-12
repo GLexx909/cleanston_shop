@@ -8,16 +8,11 @@ class CartItemSumComponent < ViewComponent::Base
   private
 
   def sum_element
-    sum = @cart_item.product.price * @cart_item.quantity
-    "#{sum} #{currency_symbol}"
+    CartItemDecorator.new(@cart_item).total_price_with_currency
   end
 
   def sum_classes
     base_classes = "w-full md:w-20 flex-1 text-right text-lg font-semibold text-gray-700 md:text-left"
     class_names(base_classes)
-  end
-
-  def currency_symbol
-    "₽"
   end
 end
