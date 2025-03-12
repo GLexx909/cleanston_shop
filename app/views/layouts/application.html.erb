@@ -27,6 +27,6 @@
     <main class="container md:w-[786px] mx-auto">
       <%= yield %>
     </main>
-    <%= render 'shared/cart_link' %>
+    <%= render 'shared/cart_link' if Current.user %>
   </body>
 </html>
