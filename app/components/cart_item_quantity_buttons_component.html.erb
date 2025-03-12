@@ -1,0 +1,13 @@
+<%= turbo_frame_tag dom_id(@cart_item, :quantity_buttons) do %>
+  <div class="flex items-center border rounded-lg overflow-hidden w-32">
+    <% if @cart_item.quantity > 1 %>
+      <%= button_element(action_type: "decrease") %>
+    <% end %>
+
+    <span class="w-full text-center text-lg font-semibold text-gray-900">
+      <%= @cart_item.quantity %>
+    </span>
+
+    <%= button_element(action_type: "increase") %>
+  </div>
+<% end %>
